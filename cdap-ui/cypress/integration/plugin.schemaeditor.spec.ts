@@ -30,6 +30,7 @@ describe('Plugin Schema Editor', () => {
           headers = {
             Authorization: 'Bearer ' + cookie.value,
           };
+          return Helpers.getSessionToken(headers);
         })
         .then(
           (sessionToken) =>
@@ -674,11 +675,12 @@ describe('Plugin Schema Editor', () => {
     };
     const resetDirectives = (workspace) => {
       return cy
-        .request(
-          `http://${Cypress.env(
+        .request({
+          url: `http://${Cypress.env(
             'host'
-          )}:11015/v3/namespaces/system/apps/dataprep/services/service/methods/contexts/default/workspaces/${workspace}`
-        )
+          )}:11015/v3/namespaces/system/apps/dataprep/services/service/methods/contexts/default/workspaces/${workspace}`,
+          headers,
+        })
         .then((response) => {
           const res = JSON.parse(response.allRequestResponses[0]['Response Body']);
           const workspaceInfo = res.values[0];

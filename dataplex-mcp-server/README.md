@@ -7,6 +7,10 @@ Claude Desktop, Claude Code, or any other MCP host) browse lakes, zones,
 assets, metadata entities, tasks, and data scans in a Dataplex estate,
 and trigger on-demand runs of tasks and data scans.
 
+> **Full documentation:** see the [`docs/`](docs/index.md) directory.
+> Rendered via `mkdocs serve` (see below) for a local docs site, or
+> published with any MkDocs-compatible host.
+
 ## Features
 
 The server exposes the following tools:
@@ -129,17 +133,40 @@ pytest
 ruff check .
 ```
 
+See [`docs/development.md`](docs/development.md) for the full
+contribution guide (adding tools, release checklist, CI notes).
+
+## Building the docs site
+
+```bash
+pip install mkdocs mkdocs-material
+mkdocs serve       # live preview at http://127.0.0.1:8000
+mkdocs build       # static site in ./site
+```
+
+Deploy the resulting `site/` directory to GitHub Pages, Cloud Storage,
+or any static host.
+
 ## Project layout
 
 ```
 dataplex-mcp-server/
 ├── pyproject.toml
+├── mkdocs.yml
 ├── README.md
+├── docs/                         # Published documentation
+│   ├── index.md
+│   ├── getting-started.md
+│   ├── configuration.md
+│   ├── tools-reference.md
+│   ├── architecture.md
+│   ├── development.md
+│   └── troubleshooting.md
 ├── src/dataplex_mcp_server/
 │   ├── __init__.py
 │   ├── __main__.py
-│   ├── dataplex_client.py   # Google Cloud SDK facade
-│   └── server.py            # MCP tool schemas + server setup
+│   ├── dataplex_client.py        # Google Cloud SDK facade
+│   └── server.py                 # MCP tool schemas + server setup
 └── tests/
     └── test_dataplex_client.py
 ```

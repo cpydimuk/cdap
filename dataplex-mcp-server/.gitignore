@@ -1,0 +1,16 @@
+# Build outputs
+site/
+dist/
+build/
+*.egg-info/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editor
+.vscode/
+.idea/

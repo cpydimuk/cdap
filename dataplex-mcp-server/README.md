@@ -139,13 +139,24 @@ contribution guide (adding tools, release checklist, CI notes).
 ## Building the docs site
 
 ```bash
-pip install mkdocs mkdocs-material
+pip install -e '.[docs]'
 mkdocs serve       # live preview at http://127.0.0.1:8000
 mkdocs build       # static site in ./site
 ```
 
 Deploy the resulting `site/` directory to GitHub Pages, Cloud Storage,
 or any static host.
+
+### Building a single PDF
+
+A [pre-built PDF](dataplex-mcp-server-docs.pdf) ships in this directory.
+To regenerate it from the Markdown sources:
+
+```bash
+pip install -e '.[pdf]'
+python scripts/build_pdf.py            # writes dataplex-mcp-server-docs.pdf
+python scripts/build_pdf.py -o out.pdf # custom output path
+```
 
 ## Project layout
 
@@ -154,6 +165,9 @@ dataplex-mcp-server/
 ├── pyproject.toml
 ├── mkdocs.yml
 ├── README.md
+├── dataplex-mcp-server-docs.pdf  # Pre-built PDF of the docs
+├── scripts/
+│   └── build_pdf.py              # Regenerates the PDF from docs/
 ├── docs/                         # Published documentation
 │   ├── index.md
 │   ├── getting-started.md

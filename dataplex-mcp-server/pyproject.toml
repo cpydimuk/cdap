@@ -33,6 +33,15 @@ dev = [
     "pytest-asyncio>=0.23",
     "ruff>=0.4",
 ]
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.5",
+]
+pdf = [
+    "markdown>=3.5",
+    "pymdown-extensions>=10.0",
+    "weasyprint>=60",
+]
 
 [project.scripts]
 dataplex-mcp-server = "dataplex_mcp_server.__main__:main"

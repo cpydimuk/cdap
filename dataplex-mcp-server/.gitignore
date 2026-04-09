@@ -4,6 +4,12 @@ dist/
 build/
 *.egg-info/
 
+# The checked-in dataplex-mcp-server-docs.pdf is intentionally tracked,
+# but any custom-named PDFs produced by scripts/build_pdf.py -o ... are
+# treated as local artifacts.
+/*.pdf
+!dataplex-mcp-server-docs.pdf
+
 # Python
 __pycache__/
 *.pyc

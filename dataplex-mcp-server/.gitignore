@@ -1,0 +1,20 @@
+# Build outputs
+site/
+dist/
+build/
+*.egg-info/
+
+# The checked-in PDF in "MCP for data Plex/" is intentionally tracked.
+# Any other PDFs produced by scripts/build_pdf.py -o ... are local artifacts.
+/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editor
+.vscode/
+.idea/

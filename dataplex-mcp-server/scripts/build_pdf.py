@@ -354,7 +354,7 @@ def main() -> None:
         "-o",
         "--output",
         type=Path,
-        default=MODULE_ROOT / "dataplex-mcp-server-docs.pdf",
+        default=MODULE_ROOT / "MCP for data Plex" / "dataplex-mcp-server-docs.pdf",
         help="Output PDF path (default: dataplex-mcp-server-docs.pdf).",
     )
     args = parser.parse_args()

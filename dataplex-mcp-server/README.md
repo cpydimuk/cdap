@@ -149,7 +149,7 @@ or any static host.
 
 ### Building a single PDF
 
-A [pre-built PDF](dataplex-mcp-server-docs.pdf) ships in this directory.
+A [pre-built PDF](MCP%20for%20data%20Plex/dataplex-mcp-server-docs.pdf) ships in the `MCP for data Plex/` folder.
 To regenerate it from the Markdown sources:
 
 ```bash
@@ -165,7 +165,8 @@ dataplex-mcp-server/
 ├── pyproject.toml
 ├── mkdocs.yml
 ├── README.md
-├── dataplex-mcp-server-docs.pdf  # Pre-built PDF of the docs
+├── MCP for data Plex/
+│   └── dataplex-mcp-server-docs.pdf  # Pre-built PDF of the docs
 ├── scripts/
 │   └── build_pdf.py              # Regenerates the PDF from docs/
 ├── docs/                         # Published documentation
